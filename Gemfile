@@ -7,9 +7,8 @@ def location_for(place, fake_version = nil)
     ['>= 0', { :path => File.expand_path($1), :require => false }]
   else
     [place, { :require => false }]
-  end
-end
 
+    
 group :test do
   gem 'puppetlabs_spec_helper', '~> 1.2.2',                         :require => false
   gem 'rspec-puppet', '~> 2.5',                                     :require => false

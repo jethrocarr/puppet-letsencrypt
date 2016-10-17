@@ -23,7 +23,16 @@ group :test do
   gem 'puppet-lint-undef_in_function-check'
   gem 'puppet-lint-unquoted_string-check'
   gem 'puppet-lint-variable_contains_upcase'
-  gem 'rubocop'
+
+  if ENV['TRAVIS_RUBY_VERSION'] < '2.2'
+    gem 'json_pure', '~> 1.8'
+  end
+
+  if ENV['TRAVIS_RUBY_VERSION'] < '2.0'
+    gem 'rubocop', '~> 0.39.0'
+  else
+    gem 'rubocop'
+  end
 end
 
 group :development do

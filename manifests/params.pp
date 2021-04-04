@@ -11,7 +11,7 @@ class letsencrypt::params {
   $repo                = 'https://github.com/letsencrypt/letsencrypt.git'
   $version             = 'v0.9.3'
   $config              = {
-    'server' => 'https://acme-v01.api.letsencrypt.org/directory',
+    'server' => 'https://acme-v02.api.letsencrypt.org/directory',
   }
 
   if $::operatingsystem == 'Debian' and versioncmp($::operatingsystemrelease, '9') >= 0 {
